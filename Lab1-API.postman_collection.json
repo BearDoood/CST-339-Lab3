@@ -1,0 +1,56 @@
+{
+  "info": {
+    "name": "Lab1 Product API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:8080" }
+  ],
+  "item": [
+    {
+      "name": "Hello",
+      "request": { "method": "GET", "url": "{{baseUrl}}/hello" }
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/products" }
+        },
+        {
+          "name": "Get Product By Id",
+          "request": { "method": "GET", "url": "{{baseUrl}}/api/products/1" }
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/api/products",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Mouse Pad\",\n  \"description\": \"Extended desk mat\",\n  \"category\": \"Accessories\",\n  \"price\": 19.99,\n  \"quantity\": 60\n}"
+            }
+          }
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "url": "{{baseUrl}}/api/products/1",
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Wireless Mouse Pro\",\n  \"description\": \"Upgraded ergonomic mouse\",\n  \"category\": \"Accessories\",\n  \"price\": 34.99,\n  \"quantity\": 40\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Product",
+          "request": { "method": "DELETE", "url": "{{baseUrl}}/api/products/10" }
+        }
+      ]
+    }
+  ]
+}
