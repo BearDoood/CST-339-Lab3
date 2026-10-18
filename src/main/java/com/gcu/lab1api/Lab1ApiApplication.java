@@ -1,0 +1,12 @@
+package com.gcu.lab1api;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class Lab1ApiApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(Lab1ApiApplication.class, args);
+	}
+}
